@@ -189,8 +189,6 @@ opacity: 1;
     color: var(--primary-text-color);
 }
     
-    
-
 .contact-links {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -210,7 +208,7 @@ opacity: 1;
 } 
 
 
-/* hero */
+/* Modal */
 
 .backdrop {
     position: fixed;
@@ -226,7 +224,6 @@ opacity: 1;
     pointer-events: initial;
 
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 
 .backdrop.is-hidden {
@@ -235,17 +232,14 @@ opacity: 1;
     pointer-events: none;
 }
 
-
-
 .modal {
     position: absolute;
+    max-width: 528px;
+    min-height: 581px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    min-width: 528px;
-    min-height: 581px;
-    background-color: var(--primary-white-color);
+     background-color: var(--primary-white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
@@ -262,16 +256,170 @@ opacity: 1;
     align-items: center;
     justify-content: center;
 
-
     transform: translate(50%, -50%);
     border-radius: 50%;
     background-color: var(--primary-white-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
     cursor: pointer;
 
-    /* transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-close-btn:focus {
+    fill: var(--accent-color);
+
+}
+
+.modal-form-area {
+     min-width: 448px;
+     min-height: 581px;
+     padding: 40px;
+}
+
+.modal-form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 448px;  
+    padding: 12px 15px 12px 42px;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.25;
+    color: var(--title-text-color);
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-field-comment {
+    transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-field:focus,
+.modal-form-field-comment:focus {
+  outline: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+   
+.modal-form-field:focus + svg {
+    border-color: var(--accent-color);
+    fill: var(--accent-color);
+}
+
+ .modal-title { 
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--secondary-text-color);
+}
+
+.label-text {
+    font-size: 12px;
+    letter-spacing: 0.01em;
+    color: var(--primary-text-color);
+}
+
+.modal-form-label {
+    position: relative;
+}
+
+.modal-form-icon {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 50%;
+    left: 15px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+   
+.modal-input-field {
+    outline: transparent;
+}
+
+.checkbox-text {
+    line-height: 1.71;
+    color: var(--primary-text-color);
+}
+
+.option-link {
+    color: var(--accent-color);
+    text-decoration-line: underline;
+}
+ 
+.form-list-item {
+    margin: 0;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    height: 120px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    resize: none;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.form-button,
+.footer-form-btn {
+    cursor: pointer;
+    border: none;
+    padding: 10px 50px;
+    display: inline-flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: var(--text-color);
+    background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-button:hover,
+.form-button:focus {
+    background-color: #188CE8;
+}
+
+.form-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.form-icon-check {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    outline: auto;
+    border-radius: 2px;
+    width: 16px;
+    height: 15px;
+    border: 0.2px solid var(--primary-white-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-check:checked + .form-icon-check {
+    outline: transparent;
+    background-color: var(--accent-color);
+
+}
+
+.icon-check {
+    fill: var(--text-color);
+}
+
+
+/* hero */
 
 .section-hero {
         max-width: 1600px;
@@ -595,7 +743,7 @@ opacity: 1;
         font-weight: 700;
         font-size: 26px;
         line-height: 1.19;
-        color:var(--text-color);   
+        color: var(--text-color);   
 }
 
 .footer {
@@ -611,7 +759,6 @@ opacity: 1;
 .footer-contakt {
     margin-right: 70px;
 }
-
 
 .footer-adress {
     display: flex;
@@ -639,7 +786,8 @@ opacity: 1;
     margin-bottom: 0px;
 }
 
-.footer-media-title{
+.footer-media-title,
+.footer-form-text {
     font-weight: 700;
     line-height: 16px;
     color: var(--text-color);
@@ -651,7 +799,6 @@ opacity: 1;
     display: flex;
     width: 206px;
 }
-
 
 .footer-media-link {
         display: flex;
@@ -665,7 +812,6 @@ opacity: 1;
 
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);     
 }
-
 
 .footer-media-link:focus,
 .footer-media-link:hover {
@@ -682,6 +828,42 @@ margin-right: 10px;
 
 .footer-media-item:last-child {
     margin-right: 0;
+}
+
+.footer-social {
+    margin-right: 93px;
+}
+
+.footer-form-email {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-form::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    display: flex;
+    align-items: flex-start;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.email-input {
+        width: 358px;
+        height: 50px;
+        padding: 15px 16px;
+        margin-right: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+        border-radius: 4px;
+        background-color: transparent;
+}
+
+.footer-form-btn {
+    padding: 10px 29px;
+}
+
+.svg-send {
+    margin-left: 10px;
 }
 
 
