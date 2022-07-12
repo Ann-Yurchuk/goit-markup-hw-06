@@ -116,7 +116,6 @@ html {
     margin-right: 0px;
 }
 
-
 .nav-lists .nav-item {
    display: block;
 }
@@ -131,8 +130,6 @@ html {
 .nav-item:focus,
 .nav-item:hover {
     color: var(--accent-color);
-
-    
 }
 
 .current-link::after {
@@ -239,7 +236,7 @@ opacity: 1;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-     background-color: var(--primary-white-color);
+    background-color: var(--primary-white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
 }
@@ -265,9 +262,9 @@ opacity: 1;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close-btn:focus {
+.modal-close-btn:focus, 
+.modal-close-btn:hover {
     fill: var(--accent-color);
-
 }
 
 .modal-form-area {
@@ -280,10 +277,10 @@ opacity: 1;
     position: relative;
     display: flex;
     flex-direction: column;
-    min-width: 448px;  
+    width: 100%;  
+    height: 40px;
     padding: 12px 15px 12px 42px;
     margin: 0;
-    margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.25;
     color: var(--title-text-color);
@@ -315,9 +312,11 @@ opacity: 1;
 }
 
 .label-text {
+    display: block;
     font-size: 12px;
     letter-spacing: 0.01em;
     color: var(--primary-text-color);
+    margin-bottom: 4px;
 }
 
 .modal-form-label {
@@ -349,14 +348,20 @@ opacity: 1;
  
 .form-list-item {
     margin: 0;
+    margin-bottom: 10px;
 }
+
+.form-list-item:last-child {
+    margin-bottom: 20px;
+}
+
+
 
 textarea {
     display: block;
     width: 100%;
     height: 120px;
     padding: 12px 16px;
-    margin-bottom: 20px;
     resize: none;
     cursor: pointer;
     border-radius: 4px;
@@ -401,12 +406,19 @@ textarea {
     justify-content: center;
     align-items: center;
     outline: auto;
+    margin-right: 4px;
     border-radius: 2px;
     width: 16px;
     height: 15px;
     border: 0.2px solid var(--primary-white-color);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), outline 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.modal-form-checkbox {
+    display: flex;
+    align-items: center;
+}
+
 
 .modal-form-check:checked + .form-icon-check {
     outline: transparent;
@@ -609,7 +621,6 @@ textarea {
     margin-right: 0px;
 }
 
-
 .team {
     background: var(--bg-color); 
 }
@@ -667,7 +678,7 @@ textarea {
     border-radius: 50%;
 
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    
+  
 }
 
 .social-media-link:focus, 
@@ -729,7 +740,7 @@ textarea {
 
 .customer-media-icon {
       fill: currentColor;
-      transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1)
+      transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
         }
  
 
@@ -754,10 +765,7 @@ textarea {
 .footer-container {
     display: flex;
     align-items: baseline;
-}
-
-.footer-contakt {
-    margin-right: 70px;
+    justify-content: space-between;
 }
 
 .footer-adress {
@@ -786,8 +794,7 @@ textarea {
     margin-bottom: 0px;
 }
 
-.footer-media-title,
-.footer-form-text {
+.footer-media-title {
     font-weight: 700;
     line-height: 16px;
     color: var(--text-color);
@@ -830,13 +837,11 @@ margin-right: 10px;
     margin-right: 0;
 }
 
-.footer-social {
-    margin-right: 93px;
-}
-
 .footer-form-email {
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 12px;
 }
 
 .footer-form::placeholder {
@@ -851,15 +856,29 @@ margin-right: 10px;
         width: 358px;
         height: 50px;
         padding: 15px 16px;
-        margin-right: 12px;
+        margin-right: 0;
         border: 1px solid rgba(255, 255, 255, 0.3);
         filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
         border-radius: 4px;
         background-color: transparent;
+        color: var(--text-color);
+}
+
+.email-label {
+    font-weight: 700;
+    line-height: 16px;
+    color: var(--text-color);
+    margin-bottom: 35px;
+    text-transform: uppercase;
+}
+
+.email-label-text {
+    display: block;
+    margin-bottom: 20px;
 }
 
 .footer-form-btn {
-    padding: 10px 29px;
+padding: 10px 29px;
 }
 
 .svg-send {
